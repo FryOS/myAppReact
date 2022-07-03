@@ -1,10 +1,12 @@
 import React from "react";
 import reactDom from "react-dom";
+import Counter from "./components/counter";
 import "bootstrap/dist/css/bootstrap.css";
 
-const element = <h1>hello world</h1>;
 
+const App = () => {
+    return <Counter/>;
+}
 
-reactDom.render(element, document.getElementById("root"));
+reactDom.render(<App/>, document.getElementById("root"));
 
-console.log(element);
