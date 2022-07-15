@@ -25,25 +25,37 @@ const CountersList = () => {
 
     const handleIncrement = (id) => {
 
-        setCounters(prev => {
-            return [
-                ...prev
-            ]
-        })
-        const idCount = counters.filter(c => c.id === id);
-        idCount.map(c => c.value += 1);
+        const elemIndex = counters.findIndex(c => c.id === id);
+        const newCounters = [...counters];
+        newCounters[elemIndex].value++;
+        setCounters(newCounters);
+
+
+
+        // const idCount = counters.filter(c => c.id === id);
+        // idCount.map(c => c.value += 1);
+        // setCounters(prev => {
+        //     return [
+        //         ...prev
+        //     ]
+        // })       
         
     };
    
        const handleDecrement = (id) => {
 
-        setCounters(prev => {
-            return [
-                ...prev
-            ]
-        })
-        const idCount = counters.filter(c => c.id === id);
-        idCount.map(c => c.value -= 1);
+        const elemIndex = counters.findIndex(c => c.id === id);
+        const newCounters = [...counters];
+        newCounters[elemIndex].value--;
+        setCounters(newCounters);
+
+        // setCounters(prev => {
+        //     return [
+        //         ...prev
+        //     ]
+        // })
+        // const idCount = counters.filter(c => c.id === id);
+        // idCount.map(c => c.value -= 1);
     };
 
     return (
